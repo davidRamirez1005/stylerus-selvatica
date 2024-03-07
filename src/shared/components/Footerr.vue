@@ -15,8 +15,6 @@ p{
 }
     footer{
         display : flex;
-        position: relative;
-        bottom: -0.4rem;
         justify-content : center ;
         align-items : center;
         height : 5vh;

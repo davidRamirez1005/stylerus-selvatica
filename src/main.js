@@ -7,6 +7,7 @@ import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 import 'animate.css';
 import 'tailwindcss/tailwind.css'
+import './css/style.css'
 
 
 const app = createApp(App)

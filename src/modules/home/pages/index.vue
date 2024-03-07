@@ -1,8 +1,5 @@
 <template>
-  <div>
-    <div class="header">
-      <navbar />
-    </div>
+  <div class="container">
     <div class="inicio">
       <inicio />
     </div>
@@ -12,6 +9,7 @@
     <div class="final">
       <final />
     </div>
+    <br><br><br><br><br><br><br><br>
     <div class="footer">
       <Footer />
     </div>
@@ -23,8 +21,20 @@ import { ref, onMounted, onBeforeUnmount } from "vue";
 import inicio from "../components/inicio/inicio.vue";
 import mitad from "../components/mitad/mitad.vue";
 import final from "../components/final/final.vue";
-import navbar from "../../../shared/components/navBar.vue";
 import Footer from "../../../shared/components/Footerr.vue";
 </script>
 
-<style scoped></style>
+<style scoped>
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+</style>
