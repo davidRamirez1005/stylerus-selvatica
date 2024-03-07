@@ -1,0 +1,32 @@
+<template>
+<footer>
+    <p> Stylerus -<span> Copyright © {{new Date().getFullYear()}}</span> </p>
+</footer>
+</template>
+
+<script setup>
+
+</script>
+
+<style scoped>
+p{
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+    footer{
+        display : flex;
+        position: relative;
+        bottom: -0.4rem;
+        justify-content : center ;
+        align-items : center;
+        height : 5vh;
+        width: 100%;
+        background-color: rgb(32, 31, 31);
+        color: aliceblue;
+    }
+    @media screen and (max-width: 710px) {
+        p{
+            font-size: 0.7rem;
+        }
+    }
+</style>
