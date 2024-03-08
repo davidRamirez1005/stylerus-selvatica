@@ -19,7 +19,7 @@ p{
         align-items : center;
         height : 5vh;
         width: 100%;
-        background-color: rgb(32, 31, 31);
+        background-color: #393E46;
         color: aliceblue;
     }
     @media screen and (max-width: 710px) {
