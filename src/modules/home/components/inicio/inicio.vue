@@ -56,7 +56,7 @@
       <div class="mx-auto max-w-2xl py-32 sm:py-38 lg:py-25">
         <div class="sm:mb-4 sm:flex sm:justify-center">
           <p
-            class="mt-4 font-bold text-base sm:text-lg lg:text-xl leading-4 text-[#393E46] animate__animated animate__jello"
+            class="mt-4 font-bold text-base sm:text-lg lg:text-xl leading-4 text-[#393E46] animate__animated animate__jello text-center  items-center justify-center"
           >
             APROVECHA! LA OFERTA SE ACABARÁ EN
           </p>
@@ -64,7 +64,7 @@
         <br />
         <div class="sm:mb-4 sm:flex sm:justify-center">
           <div
-            class="relative rounded-full px-3 sm:py-4 py-3 text-6xl leading-6 text-gray-600 ring-4 ring-gray-900/10 hover:ring-gray-900/20"
+            class="relative rounded-full px-3 sm:py-4 py-3 text-6xl leading-6 text-gray-600 ring-4 ring-gray-900/10 hover:ring-gray-900/20 text-center items-center justify-center"
           >
             {{ tiempoFormateado }}
           </div>
@@ -400,15 +400,15 @@ onMounted(() => {
     display: block;
   }
   .linea1 {
-    top: 25%;
+    top: 45%;
     left: 2%;
   }
   .linea2 {
-    top: 35%;
+    top: 95%;
     left: 65%;
   }
   .linea3 {
-    top: 40%;
+    top: 105%;
     left: 14%;
   }
   .precio h2 {
