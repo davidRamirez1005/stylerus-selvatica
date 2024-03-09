@@ -1,11 +1,10 @@
 <template>
-<div>
+  <div>
     <header class="absolute inset-x-0 top-0 z-50">
       <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div class="flex lg:flex-1">
           <a href="#" class="-m-1.5 p-1.5">
-            <span class="sr-only">Your Company</span>
-            <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="" />
+            <img class="w-auto sm:w-20 md:w-24 lg:w-32" src="./assets/logo.png" alt="logo" />
           </a>
         </div>
         <div class="flex lg:hidden">
@@ -14,31 +13,41 @@
             <Bars3Icon class="h-6 w-6" aria-hidden="true" />
           </button>
         </div>
-        <div class="hidden lg:flex lg:gap-x-12">
-          <a v-for="item in navigation" :key="item.name" :href="item.href" class="text-sm font-semibold leading-6 text-gray-900">{{ item.name }}</a>
+        <div class=" lg:flex lg:gap-x-12">
+          <div class="nav flex gap-x-8">
+            <a v-for="item in navigation" :key="item.name" :href="item.href" class="text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl font-semibold leading-9 text-gray-900">{{ item.name }}</a>
+          </div>
         </div>
         <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Log in <span aria-hidden="true">&rarr;</span></a>
         </div>
       </nav>
     </header>
-</div>
+  </div>
 </template>
 
 <script setup>
-import { ref } from 'vue'
-
+import { ref } from 'vue';
 
 const navigation = [
-  { name: 'Product', href: '#' },
-  { name: 'Features', href: '#' },
-  { name: 'Marketplace', href: '#' },
-  { name: 'Company', href: '#' },
-]
+  { name: 'Promoción', href: '#' },
+  { name: 'Contactos', href: '#' },
+];
 
-const mobileMenuOpen = ref(false)
+const mobileMenuOpen = ref(false);
 </script>
 
 <style scoped>
-
+img {
+  width: 10rem;
+  height: 6rem;
+}
+@media (max-width: 750px) {
+  img {
+    width: 6rem;
+    height: 4rem;
+  }
+  .nav a{
+    color: aliceblue;
+  }
+}
 </style>
