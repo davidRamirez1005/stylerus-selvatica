@@ -29,7 +29,7 @@
 import { ref } from 'vue';
 
 const navigation = [
-  { name: 'Producto', href: '#' },
+  { name: 'Promoción', href: '#' },
   { name: 'Contactos', href: '#' },
 ];
 

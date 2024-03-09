@@ -56,7 +56,7 @@
       <div class="mx-auto max-w-2xl py-32 sm:py-38 lg:py-25">
         <div class="sm:mb-4 sm:flex sm:justify-center">
           <p
-            class="mt-4 font-bold text-base sm:text-lg lg:text-xl leading-4 text-[#393E46]"
+            class="mt-4 font-bold text-base sm:text-lg lg:text-xl leading-4 text-[#393E46] animate__animated animate__jello"
           >
             APROVECHA! LA OFERTA SE ACABARÁ EN
           </p>
@@ -73,7 +73,7 @@
         <br />
         <div class="text-center">
           <h1
-            class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl"
+            class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl scroll"
           >
             Tónico Anticaída Mechudos
           </h1>
@@ -82,30 +82,39 @@
             <img class="" src="./assets/tonico.png" alt="tonico" />
           </div>
           <div class="solicitar">
-            <Solicitar />
+            <Solicitar class="animate__animated animate__jello animate__repeat-2"/>
           </div>
           <div
             class="precio"
             style="display: flex; justify-content: center; gap: 2rem"
           >
-            <h2 class="font-bold text-[#6D9886]">$50.000</h2>
+            <div class="scroll">
+              <h2 class="font-bold text-[#6D9886] animate__animated animate__jello">$65.000</h2>
+            </div>
             <del
-              class="text-x1 sm:text-2xl md:text-2xl lg:text-2xl font-bold text-gray-900/40"
-              >$70.000</del
+              class="text-x1 sm:text-2xl md:text-2xl lg:text-2xl font-bold text-gray-900/40 scroll"
+              >$80.000</del
             >
           </div>
-          <br />
+          <br>
           <div class="solicitarMovil">
-            <Solicitar />
+            <Solicitar class="scroll" />
           </div>
           <br>
-          <p class="mt-6 text-lg leading-8 text-gray-600">
-            Es ideal para hombres y mujeres que tienen problemas con la caída
-            del cabello. Su composición es una mezcla de ingredientes naturales
-            que nutren, fortalecen y activan el folículo piloso. Controla y
-            previene la caída del cabello y estimula su crecimiento. Es un
-            producto libre de Alcohol y libre de Minoxidil.
-          </p>
+          <div :class="{ 'dark-text': isDark }">
+              <p class="mt-6 text-lg leading-8 scroll text">
+              Es ideal para hombres y mujeres que tienen problemas con la caída
+              del cabello. Su composición es una mezcla de ingredientes naturales
+              que nutren, fortalecen y activan el folículo piloso. Controla y
+              previene la caída del cabello y estimula su crecimiento. Es un
+              producto libre de Alcohol y libre de Minoxidil.
+            </p>
+          </div>
+          <br>
+          <div class="scroll publicidad">
+            <img src="./assets/anticaida.png" alt="anticaida" class="anticaida scroll">
+            <img src="./assets/logofusion.png" alt="logofuison" class="logofusion scroll">
+          </div>
           <br />
         </div>
       </div>
@@ -142,15 +151,67 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, watchEffect } from "vue";
 import NavBar from "./NavBar.vue";
 import Solicitar from "./Solicitar.vue";
+
+
+let isDark = ref(false);
+
+function isDarkColor(color) {
+  const rgb = color.replace(/[^0-9,]/g, '').split(',');
+  const brightness = Math.round(((parseInt(rgb[0]) * 299) +
+                      (parseInt(rgb[1]) * 587) +
+                      (parseInt(rgb[2]) * 114)) / 1000);
+  return brightness < 125;
+}
+
+watchEffect(() => {
+  const bgColor = window.getComputedStyle(document.body).backgroundColor;
+  isDark.value = isDarkColor(bgColor);
+});
 </script>
 
 <style scope>
+.text {
+  color: var(--text-color);
+}
+
+.dark-background {
+  --text-color: white;
+}
+
+:not(.dark-background) {
+  --text-color: #181a17;
+}
+
+.dark-text {
+  color: white;
+}
+@keyframes show {
+  from {
+    opacity: 0;
+    scale: 25%;
+  }
+
+  to {
+    opacity: 1;
+    scale: 100%;
+  }
+}
+.scroll {
+  view-timeline-name: --image;
+  view-timeline-axis: block;
+
+  animation-timeline: --image;
+  animation-name: show;
+
+  animation-range: entry 25% cover 30%;
+  animation-fill-mode: both;
+}
 .decoracionNegra {
   display: flex;
-  height: 70%;
+  height: 53%;
   position: absolute;
   z-index: -1;
   top: 0;
@@ -160,15 +221,48 @@ import Solicitar from "./Solicitar.vue";
   display: flex;
   position: absolute;
   z-index: 1;
-  top: 10%;
+  top: 7%;
   right: 3%;
 }
 .promocion {
   display: flex;
   position: absolute;
-  z-index: 1;
+  z-index: -1;
   top: 16%;
-  right: 38%;
+  right: 43%;
+}
+.publicidad {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  z-index: 1;
+  background-color: #6D9886;
+  width: 100%;
+  height: auto;
+  padding: 1rem;
+  border: 1px solid #284d3d;
+  border-radius: 50px 100px 50px 110px;
+  animation: colorChange 2s infinite;
+}
+@keyframes colorChange {
+  0% {border-color: #0ef79e;}
+  25% {border-color:#4ebc8c;}
+  50% {border-color: #6D9886;}
+  75% {border-color: #3b9c72;}
+  100% {border-color: #3aaf7c;}
+}
+.anticaida{
+  width: 20rem;
+  height: 45vh;
+}
+.publicidad img {
+  border-radius: 30px;
+}
+.logofusion{
+  width: 11rem;
+  height: 20vh;
+  display: flex;
+  align-self: center;
 }
 .promocion img {
   width: 10rem;
@@ -177,7 +271,7 @@ import Solicitar from "./Solicitar.vue";
   display: flex;
   position: absolute;
   z-index: 999;
-  top: 70%;
+  top: 53%;
   right: 10%;
 }
 .solicitarMovil {
@@ -203,18 +297,22 @@ import Solicitar from "./Solicitar.vue";
   display: flex;
   position: absolute;
   z-index: -1;
-  top: 40%;
-  left: 48%;
+  top: 30%;
+  left: 45%;
 }
 .linea3 {
   display: flex;
   position: absolute;
   z-index: -1;
-  top: 50%;
-  left: 48%;
+  top: 40%;
+  left: 43%;
 }
 .precio h2 {
-  font-size: 3rem;
+  font-size: 4rem;
+}
+.precio del{
+  font-size: 2rem;
+
 }
 @media (max-width: 800px) {
   .decoracionNegra {
@@ -234,7 +332,7 @@ import Solicitar from "./Solicitar.vue";
     display: flex;
     position: absolute;
     z-index: -1;
-    top: 22%;
+    top: 20%;
     right: 4%;
   }
   .tonico {
@@ -252,15 +350,28 @@ import Solicitar from "./Solicitar.vue";
     left: 2%;
   }
   .linea2 {
-    top: 30%;
-    left: 55%;
+    top: 35%;
+    left: 65%;
   }
   .linea3 {
-    top: 60%;
-    left: 74%;
+    top: 40%;
+    left: 14%;
   }
   .precio h2 {
-    font-size: 2.5rem;
+    font-size: 3rem;
+  }
+  .precio del{
+    font-size: 1.5rem;
+  }
+  .publicidad {
+    border-radius: 50px 100px 50px 50px;
+  }
+  .anticaida{
+    width: 70vw;
+    height: 45vh;
+  }
+  .logofusion{
+    display: none;
   }
 }
 </style>
