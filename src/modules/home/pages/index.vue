@@ -9,10 +9,6 @@
     <div class="final">
       <final />
     </div>
-    <br><br><br><br><br><br><br><br>
-    <div class="footer">
-      <Footer />
-    </div>
   </div>
 </template>
 
@@ -29,11 +25,6 @@ import Footer from "../../../shared/components/Footerr.vue";
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  position: absolute;
 }
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-}
+
 </style>

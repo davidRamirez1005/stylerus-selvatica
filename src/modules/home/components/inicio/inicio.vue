@@ -64,9 +64,9 @@
         <br />
         <div class="sm:mb-4 sm:flex sm:justify-center">
           <div
-            class="relative rounded-full px-3 sm:py-4 py-3 text-sm leading-6 text-gray-600 ring-4 ring-gray-900/10 hover:ring-gray-900/20"
+            class="relative rounded-full px-3 sm:py-4 py-3 text-6xl leading-6 text-gray-600 ring-4 ring-gray-900/10 hover:ring-gray-900/20"
           >
-            Announcing our next round of funding.
+            {{ tiempoFormateado }}
           </div>
         </div>
         <br />
@@ -82,38 +82,52 @@
             <img class="" src="./assets/tonico.png" alt="tonico" />
           </div>
           <div class="solicitar">
-            <Solicitar class="animate__animated animate__jello animate__repeat-2"/>
+            <Solicitar
+              class="animate__animated animate__jello animate__repeat-2"
+            />
           </div>
           <div
             class="precio"
             style="display: flex; justify-content: center; gap: 2rem"
           >
             <div class="scroll">
-              <h2 class="font-bold text-[#6D9886] animate__animated animate__jello">$65.000</h2>
+              <h2
+                class="font-bold text-[#6D9886] animate__animated animate__jello"
+              >
+                $65.000
+              </h2>
             </div>
             <del
               class="text-x1 sm:text-2xl md:text-2xl lg:text-2xl font-bold text-gray-900/40 scroll"
               >$80.000</del
             >
           </div>
-          <br>
+          <br />
           <div class="solicitarMovil">
             <Solicitar class="scroll" />
           </div>
-          <br>
+          <br />
           <div :class="{ 'dark-text': isDark }">
-              <p class="mt-6 text-lg leading-8 scroll text">
+            <p class="mt-6 text-lg leading-8 scroll text">
               Es ideal para hombres y mujeres que tienen problemas con la caída
-              del cabello. Su composición es una mezcla de ingredientes naturales
-              que nutren, fortalecen y activan el folículo piloso. Controla y
-              previene la caída del cabello y estimula su crecimiento. Es un
-              producto libre de Alcohol y libre de Minoxidil.
+              del cabello. Su composición es una mezcla de ingredientes
+              naturales que nutren, fortalecen y activan el folículo
+              piloso. Controla y previene la caída del cabello y estimula su
+              crecimiento. Es un producto libre de Alcohol y libre de Minoxidil.
             </p>
           </div>
-          <br>
+          <br />
           <div class="scroll publicidad">
-            <img src="./assets/anticaida.png" alt="anticaida" class="anticaida scroll">
-            <img src="./assets/logofusion.png" alt="logofuison" class="logofusion scroll">
+            <img
+              src="./assets/anticaida.png"
+              alt="anticaida"
+              class="anticaida scroll"
+            />
+            <img
+              src="./assets/logofusion.png"
+              alt="logofuison"
+              class="logofusion scroll"
+            />
           </div>
           <br />
         </div>
@@ -151,24 +165,55 @@
 </template>
 
 <script setup>
-import { ref, watchEffect } from "vue";
+import { ref, watchEffect, onMounted } from "vue";
 import NavBar from "./NavBar.vue";
 import Solicitar from "./Solicitar.vue";
-
 
 let isDark = ref(false);
 
 function isDarkColor(color) {
-  const rgb = color.replace(/[^0-9,]/g, '').split(',');
-  const brightness = Math.round(((parseInt(rgb[0]) * 299) +
-                      (parseInt(rgb[1]) * 587) +
-                      (parseInt(rgb[2]) * 114)) / 1000);
+  const rgb = color.replace(/[^0-9,]/g, "").split(",");
+  const brightness = Math.round(
+    (parseInt(rgb[0]) * 299 + parseInt(rgb[1]) * 587 + parseInt(rgb[2]) * 114) /
+      1000
+  );
   return brightness < 125;
 }
 
 watchEffect(() => {
   const bgColor = window.getComputedStyle(document.body).backgroundColor;
   isDark.value = isDarkColor(bgColor);
+});
+const tiempoInicial = 24 * 60 * 60;
+
+const tiempoRestante = ref(tiempoInicial);
+
+const formatoDosDigitos = (numero) => (numero < 10 ? `0${numero}` : numero);
+
+const actualizarContador = () => {
+  const horas = Math.floor(tiempoRestante.value / 3600);
+  const minutos = Math.floor((tiempoRestante.value % 3600) / 60);
+  const segundos = tiempoRestante.value % 60;
+
+  tiempoFormateado.value = `${formatoDosDigitos(horas)}:${formatoDosDigitos(minutos)}:${formatoDosDigitos(segundos)}`;
+
+  tiempoRestante.value--;
+
+  if (tiempoRestante.value < 0) {
+    reiniciarContador();
+  }
+};
+
+const reiniciarContador = () => {
+  tiempoRestante.value = tiempoInicial;
+};
+
+const tiempoFormateado = ref('');
+
+onMounted(() => {
+  setInterval(actualizarContador, 1000);
+
+  actualizarContador();
 });
 </script>
 
@@ -211,7 +256,7 @@ watchEffect(() => {
 }
 .decoracionNegra {
   display: flex;
-  height: 53%;
+  height: 98%;
   position: absolute;
   z-index: -1;
   top: 0;
@@ -229,14 +274,14 @@ watchEffect(() => {
   position: absolute;
   z-index: -1;
   top: 16%;
-  right: 43%;
+  right: 40%;
 }
 .publicidad {
   display: flex;
   justify-content: center;
   align-content: center;
   z-index: 1;
-  background-color: #6D9886;
+  background-color: #6d9886;
   width: 100%;
   height: auto;
   padding: 1rem;
@@ -245,20 +290,30 @@ watchEffect(() => {
   animation: colorChange 2s infinite;
 }
 @keyframes colorChange {
-  0% {border-color: #0ef79e;}
-  25% {border-color:#4ebc8c;}
-  50% {border-color: #6D9886;}
-  75% {border-color: #3b9c72;}
-  100% {border-color: #3aaf7c;}
+  0% {
+    border-color: #0ef79e;
+  }
+  25% {
+    border-color: #4ebc8c;
+  }
+  50% {
+    border-color: #6d9886;
+  }
+  75% {
+    border-color: #3b9c72;
+  }
+  100% {
+    border-color: #3aaf7c;
+  }
 }
-.anticaida{
+.anticaida {
   width: 20rem;
   height: 45vh;
 }
 .publicidad img {
   border-radius: 30px;
 }
-.logofusion{
+.logofusion {
   width: 11rem;
   height: 20vh;
   display: flex;
@@ -271,7 +326,7 @@ watchEffect(() => {
   display: flex;
   position: absolute;
   z-index: 999;
-  top: 53%;
+  top: 43%;
   right: 10%;
 }
 .solicitarMovil {
@@ -310,9 +365,8 @@ watchEffect(() => {
 .precio h2 {
   font-size: 4rem;
 }
-.precio del{
+.precio del {
   font-size: 2rem;
-
 }
 @media (max-width: 800px) {
   .decoracionNegra {
@@ -325,14 +379,14 @@ watchEffect(() => {
     right: 0;
     width: 67%;
   }
-  .solicitar{
+  .solicitar {
     display: none;
   }
   .promocion {
     display: flex;
     position: absolute;
     z-index: -1;
-    top: 20%;
+    top: 60%;
     right: 4%;
   }
   .tonico {
@@ -360,17 +414,17 @@ watchEffect(() => {
   .precio h2 {
     font-size: 3rem;
   }
-  .precio del{
+  .precio del {
     font-size: 1.5rem;
   }
   .publicidad {
     border-radius: 50px 100px 50px 50px;
   }
-  .anticaida{
+  .anticaida {
     width: 70vw;
     height: 45vh;
   }
-  .logofusion{
+  .logofusion {
     display: none;
   }
 }
