@@ -64,7 +64,7 @@
         <br />
         <div class="sm:mb-4 sm:flex sm:justify-center">
           <div
-            class="relative rounded-full px-3 sm:py-4 py-3 text-6xl leading-6 text-gray-600 ring-4 ring-gray-900/10 hover:ring-gray-900/20 text-center items-center justify-center"
+            class="relative rounded-full px-7 sm:py-6 py-7 text-6xl leading-6  text-gray-600 ring-4 ring-gray-900/10 hover:ring-gray-900/20 text-center items-center justify-center"
           >
             {{ tiempoFormateado }}
           </div>
