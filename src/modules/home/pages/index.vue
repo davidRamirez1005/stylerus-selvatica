@@ -22,9 +22,18 @@ import Footer from "../../../shared/components/Footerr.vue";
 
 <style scoped>
 .container {
-  display: flex;
+  display: flex;  
   flex-direction: column;
   min-height: 100vh;
+  width: 100%;
+  max-width: 100%;
+}
+@media screen and (max-width: 768px)
+{
+  .mitad{
+    position: relative;
+    top: -6rem;
+  }
 }
 
 </style>
