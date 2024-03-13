@@ -54,7 +54,7 @@
           <div
             class="grid grid-flow-col auto-cols-maz gap-8 justify-center md:flex-row-reverse"
           >
-            <a href="#">
+            <!-- <a href="#">
               <img src="./face.svg" class="w-7" alt="" />
             </a>
             <a href="">
@@ -62,7 +62,7 @@
             </a>
             <a href="#">
               <img src="./intagram.svg" class="w-7" alt="" />
-            </a>
+            </a> -->
           </div>
         </section>
       </div>
