@@ -9,8 +9,9 @@
       <img class="imageEnvio" src="./assets/envioGratis.png" alt="...">
     </div>
   </div>
-  <div class="firstImage scroll flex justify-center pt-14 pb-14">
+  <div class="firstImage scroll flex justify-center pt-14 pb-14 gap-7">
     <img class="" src="./assets/TONICOMECHUDOS.webp" alt="...">
+    <img class="" src="./assets/tonico.png" alt="...">
   </div>
   <div class="fortalezas  grid">
     <div class="fortalezasLeft flex flex-col justify-center align-center gap-20 pl-10">
@@ -29,21 +30,22 @@
     </div>
   </div>
   <div class="imagenCalvo scroll flex justify-center py-14">
-    <img src="./assets/tónico3.png" alt="">
+    <img src="./assets/tónico3.png" alt="...">
   </div>
   <div class="dataMid flex flex-col justify-center items-center text-center gap-16">
     <div class="flex flex-col items-center gap-5 ">
       <p class="text-2xl scroll">RESULTADOS <strong class="text-red-600"> IMPRESIONANTES </strong> EN POCO TIEMPO </p>
       <img class="scroll" src="./assets/starts.png" alt="...">
     </div>
-    <div class="flex flex-col gap-5 flex flex-col items-center">
+    <div class="flex flex-col gap-5 items-center">
       <p class="text-red-600 text-2xl scroll"><strong> ¡¡ENVÍO GRATIS Y PAGAS AL RECIBIR!! </strong></p>
-      <p class="buttonData text-white p-2 scroll">SOLICITAR</p>
     </div>
   </div>  
 </template>
 
-<script setup></script>
+<script setup>
+import { ref } from 'vue';
+</script>
 
 <style scoped>
 .scroll {
@@ -100,26 +102,6 @@ h1 {
   border-radius: 25px;
 }
 
-.buttonData {
-  user-select: none;
-  cursor: pointer;
-  border: none;
-  outline: none;
-  background: rgb(120, 202, 189);
-  background: linear-gradient(90deg, #78cabd 0%, #40b3a2 50%, #78cabd 100%);
-  padding: 12px 50px;
-  font-size: 14px;
-  font-weight: 700;
-  color: #fff;
-  border-radius: 5px;
-  transition: all ease 0.1s;
-  box-shadow: 0px 5px 0px 0px #40b3a2;
-}
-
-.buttonData:active {
-  transform: translateY(5px);
-  box-shadow: 0px 0px 0px 0px #a29bfe;
-}
 @media screen and (max-width: 868px) {
   .envioGratis {
     grid-template-columns: 1fr;
@@ -129,6 +111,13 @@ h1 {
     width: 100%;
   }
 
+  .firstImage {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    padding-left: 5rem;
+    padding-right: 1rem;
+  }
   .firstImage img {
     width: 70%;
   }
@@ -163,7 +152,11 @@ h1 {
   }
 
   .texto{
+    display: flex;
+    position: relative;
+    top: -10%;
     font-size: 1.4rem;
+    row-gap: 1.2rem;
   }
 
   .fortalezasLeft img {
@@ -175,7 +168,7 @@ h1 {
   }
 
   .imagenCalvo img {
-    width: 100%;
+    width: 95%;
   }
 }
 </style>

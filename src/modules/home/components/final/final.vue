@@ -1,54 +1,91 @@
 <template>
   <div class="container">
-    <section
-      class="py-20 grid gap-12 md:grid-flow-col auto-cols-fr items-center"
-    >
-<div class="container-two">
-  <div>
-        <h2 class="text-3xl font-bold">
-          Dame tyu coreo y te contactare a la brevedad
-        </h2>
-        <br>
-        <p class="font-light text-slate-600 text-lg mt-4">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati,
-          fugit qui voluptas sapiente libero <br/>aliquid corporis porro odit eos
-          blanditiis.
+    <br />
+    <div class="flex justify-center">
+      <h2 class="text-2xl font-bold">Escribenos para solicitar 😉</h2>
+    </div>
+    <br />
+    <br />
+    <div class="container-form flex flex-wrap pl-20 pr-20 align-middle justify-items-center">
+      <!-- Primera columna con texto -->
+      <div class="w-full md:w-1/2 p-4">
+        <p class="text-lg">
+          Si tienes alguna duda o necesitas ayuda, no dudes en contactarnos.
+          Estamos para ayudarte.
         </p>
       </div>
 
-  <div style="">
-    <input
-      type="email"
-      placeholder="hola@hola.com"
-      class="border border-slate-900 p-2 w-90 rounded-lg"
-      style="margin-bottom: 10px;"
-    />
-    <input
-      type="submit"
-      value="¡Contactame!"
-      class="bg-[#6D9886] text-white py-4 px-10 rounded-lg"
-    />
-  </div>
+      <!-- Segunda columna con formulario -->
+      <div class="w-full md:w-1/2 p-4">
+        <form>
+          <div class="mb-4">
+            <label
+              class="block text-gray-700 text-sm font-bold mb-2"
+              for="email"
+            >
+              Correo Electrónico:
+            </label>
+            <input
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="email"
+              type="email"
+              placeholder="Correo Electrónico"
+            />
+          </div>
+          <div class="mb-4">
+            <label
+              class="block text-gray-700 text-sm font-bold mb-2"
+              for="nombre"
+            >
+              Nombre:
+            </label>
+            <input
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="nombre"
+              type="nombre"
+              placeholder="Nombre"
+            />
+          </div>
+          <div class="mb-4">
+            <label
+              class="block text-gray-700 text-sm font-bold mb-2"
+              for="Pregunta"
+            >
+              Pregunta:
+            </label>
+            <textarea
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="Pregunta"
+              type="Pregunta"
+              placeholder="Pregunta" 
+              rows="4"
+            ></textarea>
+          </div>
+          <br>
+          <div class="flex items-center justify-between">
+            <p class="buttonData text-white p-2 scroll">SOLICITAR</p>
 
-</div>
-    </section>
-
-    <footer class="bg-[#686c75]">
+          </div>
+        </form>
+      </div>
+    </div>
+    <br>
+    <br>
+    <footer class="container-section">
       <div class="py-20">
         <section
-          class="flex flex-col text-center gap-6 border-b-2 border-slate-100 pb-8 md:lfex-row  md:items-center md:pb-10"
+          class="flex flex-col text-center gap-6 border-b-2 border-slate-100 pb-8 md:lfex-row md:items-center md:pb-10"
         >
-          <h2 class="texte-3xl text-slate-900 font-extrabold">Loanding.</h2>
-          <p class="text-slate-200">Micorreo@gmail.com</p>
+          <p class="text-slate-200">stylerus-24@gmail.com</p>
         </section>
 
         <section
           class="flex flex-col text-center gap-6 pt-8 md:lfex-row md:justify-between md:items-center md:pt-10"
         >
           <div class="flex justify-center gap-4 text-slate-100">
-            <a href="#">Inicio</a>
-            <a href="#habilidades">Habilidades</a>
-            <a href="#proyectos">Proyectos</a>
+            <a href="#">facebook</a>
+            <a href="#habilidades">instagram</a>
+            <a href="#proyectos">tik tok</a>
           </div>
 
           <div
@@ -69,8 +106,8 @@
     </footer>
   </div>
   <div class="footerr">
-      <Footer />
-    </div>
+    <Footer />
+  </div>
 </template>
 
 <script setup>
@@ -95,16 +132,47 @@ input[type="email"] {
   border-radius: 0.375rem;
 }
 .input-espacio {
-    margin-bottom: 20px;
-  }
-@media (max-width: 768px) {
+  margin-bottom: 20px;
+}
+.container-section{
+  position: relative;
+  background-image: none;
+  background-color: #686c75;
+  padding-top: 5rem;
+  padding-bottom: 3rem;
+  padding-right: 0.8rem;
+  box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.949);
+  border-top-right-radius: 2rem;
+  border-top-left-radius: 2rem;
+}
+.buttonData {
+  user-select: none;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: rgb(120, 202, 189);
+  background: linear-gradient(90deg, #78cabd 0%, #40b3a2 50%, #78cabd 100%);
+  padding: 12px 50px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  border-radius: 5px;
+  transition: all ease 0.1s;
+  box-shadow: 0px 5px 0px 0px #40b3a2;
+}
+
+.buttonData:active {
+  transform: translateY(5px);
+  box-shadow: 0px 0px 0px 0px #a29bfe;
+}
+@media (max-width: 800px) {
   section {
     padding-left: 0.6rem;
     padding-right: 0.6rem;
   }
-  .container-two {
-    flex-direction: column;
-    gap: 2rem;
+  .container-form {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
   }
 }
 </style>
