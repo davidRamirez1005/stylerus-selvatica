@@ -62,9 +62,8 @@
             ></textarea>
           </div>
           <br>
-          <div class="flex items-center justify-between">
+          <div class="flex items-center justify-center">
             <p class="buttonData text-white p-2 scroll">SOLICITAR</p>
-
           </div>
         </form>
       </div>
