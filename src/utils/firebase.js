@@ -12,13 +12,13 @@ const firebaseConfig = {
   projectId: "stylerus-24",
   storageBucket: "stylerus-24.appspot.com",
   messagingSenderId: "974591640158",
-  appId: "1:974591640158:web:8f626c7629f16967cdaacf",
-  measurementId: "G-LLR4NXS232"
+  appId: "1:974591640158:web:a3767f2fd7734d76cdaacf",
+  measurementId: "G-ZW6J0RE6F7"
 };
 
 // Initialize Firebase
-const appp = initializeApp(firebaseConfig);
-const analytics = getAnalytics(appp);
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 
 
 
