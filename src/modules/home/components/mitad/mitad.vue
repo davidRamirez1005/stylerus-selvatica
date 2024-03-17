@@ -48,16 +48,7 @@ import { ref } from 'vue';
 </script>
 
 <style scoped>
-.scroll {
-  view-timeline-name: --image;
-  view-timeline-axis: block;
 
-  animation-timeline: --image;
-  animation-name: show;
-
-  animation-range: entry 25% cover 30%;
-  animation-fill-mode: both;
-}
 h1 {
   color: rgb(144, 0, 255);
 }

@@ -1,24 +1,26 @@
 <template>
   <div class="container">
     <br />
-    <div class="flex justify-center">
+    <div class="flex justify-center scroll">
       <h2 class="text-2xl font-bold">Escribenos para solicitar 😉</h2>
     </div>
     <br />
     <br />
     <div class="container-form flex flex-wrap pl-20 pr-20 align-middle justify-items-center">
       <!-- Primera columna con texto -->
-      <div class="w-full md:w-1/2 p-4">
-        <p class="text-lg">
-          Si tienes alguna duda o necesitas ayuda, no dudes en contactarnos.
-          Estamos para ayudarte.
+      <div class="w-full md:w-1/2 p-8">
+        <p class="text-lg scroll">
+            👌 Si tienes alguna duda o necesitas ayuda, no dudes en contactarnos.
+            Estamos para ayudarte. Al llenar este formulario, podrás solicitar
+            tu pregunta de manera rápida y sencilla. Nuestro equipo se pondrá en
+            contacto contigo lo antes posible para responder a tus inquietudes.
         </p>
       </div>
 
       <!-- Segunda columna con formulario -->
       <div class="w-full md:w-1/2 p-4">
         <form>
-          <div class="mb-4">
+          <div class="mb-4 scroll">
             <label
               class="block text-gray-700 text-sm font-bold mb-2"
               for="email"
@@ -32,7 +34,8 @@
               placeholder="Correo Electrónico"
             />
           </div>
-          <div class="mb-4">
+          <div class="mb-4 scroll">
+            <br>
             <label
               class="block text-gray-700 text-sm font-bold mb-2"
               for="nombre"
@@ -46,7 +49,8 @@
               placeholder="Nombre"
             />
           </div>
-          <div class="mb-4">
+          <div class="mb-4 scroll">
+          <br>
             <label
               class="block text-gray-700 text-sm font-bold mb-2"
               for="Pregunta"
@@ -54,11 +58,11 @@
               Pregunta:
             </label>
             <textarea
-              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              class="scroll shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="Pregunta"
               type="Pregunta"
-              placeholder="Pregunta" 
-              rows="4"
+              placeholder="Pregunta por nuestros productos..." 
+              rows="4 "
             ></textarea>
           </div>
           <br>
