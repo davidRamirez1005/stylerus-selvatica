@@ -184,7 +184,7 @@ watchEffect(() => {
   const bgColor = window.getComputedStyle(document.body).backgroundColor;
   isDark.value = isDarkColor(bgColor);
 });
-const tiempoInicial = 24 * 60 * 60;
+const tiempoInicial = 22 * 40 * 80;
 
 const tiempoRestante = ref(tiempoInicial);
 
@@ -372,11 +372,14 @@ onMounted(() => {
   .solicitar {
     display: none;
   }
+  .promocion img{
+    width: 8rem;
+  }
   .promocion {
     display: flex;
     position: absolute;
     z-index: -1;
-    top: 60%;
+    top: 65%;
     right: 4%;
   }
   .tonico {

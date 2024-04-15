@@ -2,7 +2,7 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 body{
-	padding: 0 ;
+	/* padding: 0 ; */
 	background-color: #d5d4d7;
 
 }
