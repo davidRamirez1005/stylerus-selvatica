@@ -1,6 +1,6 @@
 <template>
 <footer>
-    <p> Stylerus -<span> Copyright © {{new Date().getFullYear()}}</span> </p>
+    <p> name -<span> Copyright © {{new Date().getFullYear()}}</span> created by <span class="nombre"><a href="https://jose-david-ramirez.vercel.app/" target="_blank" rel="noopener noreferrer">David Ramirez</a>😸</span> </p>
 </footer>
 </template>
 
@@ -9,10 +9,10 @@
 </script>
 
 <style scoped>
-p{
-    font-size: 0.9rem;
-    font-weight: bold;
-}
+    p{
+        font-size: 0.9rem;
+        font-weight: bold;
+    }
     footer{
         display : flex;
         justify-content : center ;
@@ -21,6 +21,9 @@ p{
         width: 100%;
         background-color: #393E46;
         color: aliceblue;
+    }
+    .nombre{
+        color: #00ADB5;
     }
     @media screen and (max-width: 710px) {
         p{

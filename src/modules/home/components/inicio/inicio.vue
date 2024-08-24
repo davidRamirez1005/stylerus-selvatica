@@ -4,7 +4,7 @@
       <img class="" src="./assets/bg2.png" alt="bg" />
     </div>
     <div class="tonico">
-      <img class="" src="./assets/tonico.png" alt="tonico" />
+      <img class="" src="https://mybucketgatos.s3.us-east-2.amazonaws.com/laura/R.jpg" alt="tonico" />
     </div>
     <div class="promocion">
       <img class="" src="./assets/promocion2.png" alt="promocion" />
@@ -166,7 +166,7 @@
 
 <script setup>
 import { ref, watchEffect, onMounted } from "vue";
-import NavBar from "./NavBar.vue";
+import NavBar from "../../../../shared/components/NavBar.vue";
 import Solicitar from "./Solicitar.vue";
 
 let isDark = ref(false);

@@ -4,23 +4,23 @@
       <h3 class="text-center scroll text-5xl"><strong>ENVÍO GRATIS <br> EN TODA COLOMBIA</strong></h3>
       <p class="text-white scroll text-center text-4xl pt-8 pb-4 "><strong>PAGAS A CONTRA-ENTREGA <br> SÓLO DESPUES DE TENER <br>
           EL PRODUCTO EN TUS MANOS</strong></p>
-      <img class="camion scroll" src="./assets/camion.png" alt="...">
+      <img class="camion scroll" src="../../../../assets/camion.png" alt="...">
     </div>
     <div class="imageEnvio scroll">
-      <img class="imageEnvio" src="./assets/envioGratis.png" alt="...">
+      <img class="imageEnvio" src="../../../../assets/envioGratis.png" alt="...">
     </div>
   </div>
   <div class="wave">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#b0adad" fill-opacity="1" d="M0,288L48,282.7C96,277,192,267,288,261.3C384,256,480,256,576,234.7C672,213,768,171,864,170.7C960,171,1056,213,1152,208C1248,203,1344,149,1392,122.7L1440,96L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
   </div>
   <div class="firstImage scroll flex justify-center pt-14 pb-14 gap-7">
-    <img class="" src="./assets/TONICOMECHUDOS.webp" alt="...">
-    <img class="" src="./assets/tonico.png" alt="...">
+    <img class="" src="../../../../assets/TONICOMECHUDOS.webp" alt="...">
+    <img class="" src="../../../../assets/tonico.png" alt="...">
   </div>
   <div class="fortalezas  grid">
     <div class="fortalezasLeft flex flex-col justify-center align-center gap-20 pl-10">
       <div class="creditos">
-        <img class="scroll" src="./assets/imageAchivements.png" alt="...">
+        <img class="scroll" src="../../../../assets/imageAchivements.png" alt="...">
       </div>
       <div class="texto flex flex-col gap-14 text-white text-4xl">
         <p class="scroll">✅ Fortalece los folículos pilosos.</p>
@@ -30,16 +30,16 @@
       </div>
     </div>
     <div class="fortalezasRight scroll">
-      <img src="./assets/image11.png" alt="...">
+      <img src="../../../../assets/image11.png" alt="...">
     </div>
   </div>
   <div class="imagenCalvo scroll flex justify-center py-14">
-    <img src="./assets/tónico3.png" alt="...">
+    <img src="../../../../assets/tónico3.png" alt="...">
   </div>
   <div class="dataMid flex flex-col justify-center items-center text-center gap-16">
     <div class="flex flex-col items-center gap-5 ">
       <p class="text-2xl scroll">RESULTADOS <strong class="text-red-600"> IMPRESIONANTES </strong> EN POCO TIEMPO </p>
-      <img class="scroll" src="./assets/starts.png" alt="...">
+      <img class="scroll" src="../../../../assets/starts.png" alt="...">
     </div>
     <div class="flex flex-col gap-5 items-center">
       <p class="text-red-600 text-2xl scroll"><strong> ¡¡ENVÍO GRATIS Y PAGAS AL RECIBIR!! </strong></p>
@@ -109,7 +109,7 @@ h1 {
 }
 
 .fortalezasLeft {
-  background-image: url(./assets/bg2.png);
+  background-image: url(../../../../assets/bg2.png);
   background-repeat: no-repeat;
   background-size: cover;
 }

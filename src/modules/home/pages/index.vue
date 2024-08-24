@@ -23,8 +23,8 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from "vue";
 import inicio from "../components/inicio/inicio.vue";
-import mitad from "../components/mitad/mitad.vue";
-import final from "../components/final/final.vue";
+import mitad from "../components/inicio/mitad.vue";
+import final from "../components/inicio/final.vue";
 </script>
 
 <style scoped>

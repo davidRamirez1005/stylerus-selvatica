@@ -4,7 +4,7 @@
       <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div class="flex lg:flex-1">
           <a href="#" class="-m-1.5 p-1.5">
-            <img class="w-auto sm:w-20 md:w-24 lg:w-32" src="./assets/logo.png" alt="logo" />
+            <img class="w-auto sm:w-20 md:w-24 lg:w-32" src="../../assets/logo.png" alt="logo" />
           </a>
         </div>
         <div class="flex lg:hidden">
@@ -27,13 +27,22 @@
 
 <script setup>
 import { ref } from 'vue';
+import { useRouter } from 'vue-router';
 
 const navigation = [
-  { name: 'Promoción', href: '#' },
+  { name: 'Inicio', href: '/' },
+  { name: 'Catálogo', href: '/catalogo' },
   { name: 'Contactos', href: '#' },
 ];
 
 const mobileMenuOpen = ref(false);
+const router = useRouter();
+
+const navigateTo = (href) => {
+  if (href !== '#') {
+    router.push(href);
+  }
+};
 </script>
 
 <style scoped>
